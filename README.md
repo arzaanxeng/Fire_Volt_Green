@@ -132,11 +132,8 @@ This project demonstrates a complete circular economy solution: **Waste → Ener
 **Dashboard Overview**  
 ![Dashboard](assets/dashboard_screenshot.png)
 
-**Vehicle Top View**  
-![Top View](assets/top_view.png)
-
 **Side View & Circuit**  
-![Side View](assets/side_view.png)
+![Side View](assets/side_view.jpg)
 
 
 ---
