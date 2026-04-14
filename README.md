@@ -152,8 +152,8 @@ This project demonstrates a complete circular economy solution: **Waste → Ener
    git clone https://github.com/YourUsername/FireVolt-Green.git
    cd FireVolt-Green)
 
-**Side View & Circuit**  
-![Side View](assets/side_view.jpg)
+**Top View & Circuit**  
+![Side View](assets/top_view.jpg)
 
 *(Replace the paths above with your actual image file names after uploading them to the `assets/` folder)*
 
