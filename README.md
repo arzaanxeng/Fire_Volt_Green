@@ -70,6 +70,9 @@ This project demonstrates a complete circular economy solution: **Waste → Ener
 ![Side View](assets/side_view.jpg)
 
 
+**Top View & Circuit**  
+![Side View](assets/top_view.jpg)
+
 ---
 
 ## Getting Started
@@ -85,8 +88,5 @@ This project demonstrates a complete circular economy solution: **Waste → Ener
    ```bash
    git clone https://github.com/YourUsername/FireVolt-Green.git
    cd FireVolt-Green)
-
-**Top View & Circuit**  
-![Side View](assets/top_view.jpg)
 
 
