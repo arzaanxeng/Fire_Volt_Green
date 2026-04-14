@@ -89,20 +89,4 @@ This project demonstrates a complete circular economy solution: **Waste → Ener
 **Top View & Circuit**  
 ![Side View](assets/top_view.jpg)
 
-*(Replace the paths above with your actual image file names after uploading them to the `assets/` folder)*
 
----
-
-## Getting Started
-
-### Prerequisites
-- Python 3.10 or higher
-- Git
-- Hardware components (ESP32 setup optional for dashboard demo)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/arzaanxeng/FireVolt-Green.git
-   cd FireVolt-Green
