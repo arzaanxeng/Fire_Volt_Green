@@ -86,7 +86,7 @@ This project demonstrates a complete circular economy solution: **Waste → Ener
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourUsername/FireVolt-Green.git
-   cd FireVolt-Green)
+   git clone https://github.com/arzaanxeng/Fire_Volt_Green.git
+   cd Fire_Volt_Green
 
 
