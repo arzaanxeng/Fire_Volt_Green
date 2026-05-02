@@ -1,0 +1,7 @@
+Open the terminal 
+Make sure your file is in the desktop
+Type:
+1. cd ~/Desktop
+2. streamlit run fire_volt_dashboard_v5.py
+3. Open it on local host
+
