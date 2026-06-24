@@ -1,4 +1,4 @@
-# 🔥 FireVolt Green
+# FireVolt Green
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io)
@@ -10,7 +10,7 @@
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 - [About the Project](#about-the-project)
 - [Key Features](#key-features)
 - [Three Subsystems](#three-subsystems)
