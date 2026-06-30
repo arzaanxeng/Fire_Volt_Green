@@ -37,7 +37,6 @@ This project demonstrates a complete circular economy solution: **Waste → Ener
 - Controlled combustion of crop stubble
 - Heat-to-electricity conversion via 12–16 TEG modules
 - Multi-stage filtration (HEPA + activated carbon)
-- Carbon soot converted into ink
 - Real-time monitoring dashboard built with Streamlit
 - ESP32-based motor control for vehicle movement
 
@@ -57,8 +56,6 @@ This project demonstrates a complete circular economy solution: **Waste → Ener
 - **Backend & Dashboard**: Python, Streamlit, Plotly, Pandas
 - **Hardware**: ESP32, Arduino, TEG modules, L298N motor drivers
 - **Visualization**: Real-time graphs and system status
-- **Others**: Docker/Kubernetes concepts (optional), IoT protocols
-
 ---
 
 ## Screenshots
@@ -74,13 +71,6 @@ This project demonstrates a complete circular economy solution: **Waste → Ener
 ![Side View](assets/top_view.jpg)
 
 ---
-
-## Getting Started
-
-### Prerequisites
-- Python 3.10 or higher
-- Git
-- Hardware components (ESP32 setup optional for dashboard demo)
 
 ### Installation
 
