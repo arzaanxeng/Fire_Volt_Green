@@ -136,7 +136,7 @@ For a full breakdown of how these subsystems work together — including circuit
 Once dependencies are installed, launch the Streamlit dashboard:
 
 ```bash
-streamlit run app.py
+streamlit run fire_volt_dashboard_v5.py
 ```
 
 The dashboard will open automatically in your browser at `http://localhost:8501`, where you can view live sensor readings, power generation stats, and system status.
@@ -149,15 +149,12 @@ The dashboard will open automatically in your browser at `http://localhost:8501`
 
 ```
 Fire_Volt_Green/
-├── app.py                  # Streamlit dashboard entry point
-├── firmware/                # ESP32 / Arduino motor & sensor control code
-├── assets/                  # Screenshots and images used in this README
-├── requirements.txt         # Python dependencies
-├── TECHNICAL_OVERVIEW.md    # Deep dive into system design and engineering
+├── ESP-32_Code/Code.cpp             # Streamlit dashboard entry point
+├── assets/                          # Screenshots and images used in this README
+├── dashboard/fire_volt_green_v5.py  # The main dashboard code and requirements.txt
+├── TECHNICAL_OVERVIEW.md            # Deep dive into system design and engineering
 └── README.md
 ```
-
-> Update this tree to match your actual repository layout.
 
 ---
 
