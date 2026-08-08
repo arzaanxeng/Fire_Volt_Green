@@ -69,7 +69,7 @@ FireVolt Green is designed to change that calculus: the same stubble a farmer wo
 | **Heat → Electricity** | Combustion chamber, 12–16 TEG modules, custom buck converter | Converts waste combustion heat into usable, regulated electrical power |
 | **Filtration & Recovery** | HEPA filter (Ø21 cm), activated carbon filter, relay-controlled fan | Cleans exhaust before release and captures soot for ink production |
 
-For a full breakdown of how these subsystems work together — including circuit design, control logic, and engineering trade-offs — see **[TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md)**.
+For a full breakdown of how these subsystems work together — including circuit design, control logic, and engineering trade-offs — see **[Technical_Overview.md](Technical_Overview.md)**.
 
 ---
 
