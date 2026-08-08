@@ -165,11 +165,17 @@ The dashboard will open automatically in your browser at `http://localhost:8501`
 
 ```
 Fire_Volt_Green/
-├── ESP-32_Code/Code.cpp             # Streamlit dashboard entry point
-├── assets/                          # Screenshots and images used in this README
-├── dashboard/fire_volt_green_v5.py  # The main dashboard code and requirements.txt
-├── TECHNICAL_OVERVIEW.md            # Deep dive into system design and engineering
-└── README.md
+├── ESP-32_Code/
+│   └── Code.cpp                   # ESP32 firmware: motor control, sensor reads, TEG monitoring
+├── assets/                        # Screenshots and images used in this README
+│   └── diagrams/
+│       ├── architecture.svg       # System architecture diagram
+│       ├── dataflow.svg           # Sensor-to-dashboard data flow diagram
+│       └── powerchain.svg         # Heat-to-battery power chain diagram
+├── dashboard/
+│   └── fire_volt_green_v5.py      # Streamlit dashboard entry point + requirements.txt
+├── README.md
+└── Technical_Overview.md          # Deep dive into system design and engineering
 ```
 
 ---
