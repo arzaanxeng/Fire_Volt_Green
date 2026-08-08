@@ -90,10 +90,26 @@ For a full breakdown of how these subsystems work together — including circuit
 
 ---
 
-## Screenshots
+## System overview
 
-**Dashboard Overview**
-![Dashboard](assets/dashboard_screenshot.png)
+FireVolt Green is organized into three physical subsystems that all report back to a central dashboard.
+
+![FireVolt Green system architecture](assets/diagrams/architecture.svg)
+
+### Data flow
+
+Sensor readings pass through the ESP32, which both drives the motors in real time and forwards telemetry to the dashboard over serial/WiFi.
+
+![FireVolt Green data flow](assets/diagrams/dataflow.svg)
+
+### Power chain
+
+Waste heat from burning crop stubble is converted to usable DC power and distributed to the vehicle's own electronics.
+
+![FireVolt Green power chain](assets/diagrams/powerchain.svg)
+
+
+## Screenshots
 
 **Side View & Circuit**
 ![Side View](assets/side_view.jpg)
