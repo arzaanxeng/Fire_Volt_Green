@@ -1,0 +1,32 @@
+<svg width="680" height="435" viewBox="0 0 680 435" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FireVolt Green system architecture">
+  <rect width="680" height="435" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#5f5e5a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="40" y="30" width="600" height="290" rx="20" fill="#eaf3de" stroke="#639922" stroke-width="1"/>
+  <text x="60" y="58" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#173404">FireVolt Green vehicle</text>
+
+  <rect x="60" y="110" width="170" height="190" rx="12" fill="#e6f1fb" stroke="#378add" stroke-width="1"/>
+  <text x="145" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#042c53">Car motion</text>
+  <text x="145" y="160" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#185fa5">ESP32, L298N,</text>
+  <text x="145" y="176" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#185fa5">DC motors</text>
+
+  <rect x="250" y="110" width="170" height="190" rx="12" fill="#faece7" stroke="#d85a30" stroke-width="1"/>
+  <text x="335" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#4a1b0c">Heat to electricity</text>
+  <text x="335" y="160" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#993c1d">Combustion chamber,</text>
+  <text x="335" y="176" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#993c1d">TEG array, buck conv.</text>
+
+  <rect x="440" y="110" width="170" height="190" rx="12" fill="#e1f5ee" stroke="#1d9e75" stroke-width="1"/>
+  <text x="525" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#04342c">Filtration</text>
+  <text x="525" y="160" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0f6e56">HEPA + carbon filter,</text>
+  <text x="525" y="176" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0f6e56">relay fan</text>
+
+  <line x1="335" y1="300" x2="335" y2="340" stroke="#5f5e5a" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <rect x="250" y="345" width="170" height="50" rx="8" fill="#f1efe8" stroke="#888780" stroke-width="1"/>
+  <text x="335" y="365" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#2c2c2a">Dashboard</text>
+  <text x="335" y="383" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#5f5e5a">Streamlit + Plotly</text>
+</svg>
