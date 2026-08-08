@@ -1,0 +1,30 @@
+<svg width="680" height="414" viewBox="0 0 680 414" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FireVolt Green power chain">
+  <rect width="680" height="414" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#5f5e5a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="200" y="30" width="280" height="56" rx="8" fill="#faeeda" stroke="#ba7517" stroke-width="1"/>
+  <text x="340" y="48" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#412402">TEG modules</text>
+  <text x="340" y="68" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#854f0b">convert heat to DC voltage</text>
+
+  <line x1="340" y1="86" x2="340" y2="126" stroke="#5f5e5a" stroke-width="1" marker-end="url(#arrow3)"/>
+
+  <rect x="200" y="126" width="280" height="56" rx="8" fill="#e6f1fb" stroke="#378add" stroke-width="1"/>
+  <text x="340" y="144" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#042c53">Buck converter</text>
+  <text x="340" y="164" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#185fa5">steps down / regulates voltage</text>
+
+  <line x1="340" y1="182" x2="340" y2="222" stroke="#5f5e5a" stroke-width="1" marker-end="url(#arrow3)"/>
+
+  <rect x="200" y="222" width="280" height="56" rx="8" fill="#e1f5ee" stroke="#1d9e75" stroke-width="1"/>
+  <text x="340" y="240" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#04342c">Li-ion battery</text>
+  <text x="340" y="260" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0f6e56">stores energy</text>
+
+  <line x1="340" y1="278" x2="340" y2="318" stroke="#5f5e5a" stroke-width="1" marker-end="url(#arrow3)"/>
+
+  <rect x="200" y="318" width="280" height="56" rx="8" fill="#f1efe8" stroke="#888780" stroke-width="1"/>
+  <text x="340" y="336" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#2c2c2a">Onboard loads</text>
+  <text x="340" y="356" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#5f5e5a">ESP32, motors, filtration fan</text>
+</svg>
