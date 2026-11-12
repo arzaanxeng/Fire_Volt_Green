@@ -19,6 +19,8 @@
 - [Key Features](#key-features)
 - [Three Subsystems](#three-subsystems)
 - [Tech Stack](#tech-stack)
+- [Power Electronics: Boost & Buck Converters](#power-electronics-boost--buck-converters)
+- [Custom ESP32-S3 Board](#custom-esp32-s3-board)
 - [Screenshots](#screenshots)
 - [Getting Started](#getting-started)
 - [Running the Dashboard](#running-the-dashboard)
@@ -54,6 +56,8 @@ FireVolt Green is designed to change that calculus: the same stubble a farmer wo
 
 -  Controlled combustion of crop stubble in an enclosed chamber (no open-field burning)
 -  Heat-to-electricity conversion via 12–16 thermoelectric generator (TEG) modules
+-  Custom-designed boost converter (built from scratch) to raise low TEG voltage; buck converter used in the demo to charge the battery
+-  Custom ESP32-S3 board designed in KiCad (schematic + PCB)
 -  Multi-stage filtration (HEPA + activated carbon) for cleaner exhaust
 -  Captured carbon soot repurposed as raw material for ink
 -  Real-time monitoring dashboard built with Streamlit
@@ -66,7 +70,7 @@ FireVolt Green is designed to change that calculus: the same stubble a farmer wo
 | Subsystem | Main Components | Purpose |
 |---|---|---|
 | **Car Motion** | ESP32, 2× L298N motor drivers, 4× DC motors, Li-ion battery pack | Autonomous / remote-controlled vehicle movement across the field |
-| **Heat → Electricity** | Combustion chamber, 12–16 TEG modules, custom buck converter | Converts waste combustion heat into usable, regulated electrical power |
+| **Heat → Electricity** | Combustion chamber, 12–16 TEG modules, custom boost converter (designed), buck converter (used in demo) | Converts waste combustion heat into usable, regulated electrical power |
 | **Filtration & Recovery** | HEPA filter (Ø21 cm), activated carbon filter, relay-controlled fan | Cleans exhaust before release and captures soot for ink production |
 
 For a full breakdown of how these subsystems work together — including circuit design, control logic, and engineering trade-offs — see **[Technical_Overview.md](Technical_Overview.md)**.
@@ -86,7 +90,9 @@ For a full breakdown of how these subsystems work together — including circuit
 - Arduino — auxiliary control logic
 - TEG (thermoelectric generator) modules — heat-to-electricity conversion
 - L298N motor drivers — DC motor control
-- Custom buck converter — power regulation
+- Custom boost converter — designed from scratch to raise low TEG voltage
+- Buck converter — used in the demo to regulate power into the battery
+- Custom ESP32-S3 board — designed in KiCad 9
 
 ---
 
@@ -108,6 +114,34 @@ Waste heat from burning crop stubble is converted to usable DC power and distrib
 
 ![FireVolt Green power chain](assets/diagrams/powerchain.svg)
 
+
+## Power Electronics: Boost & Buck Converters
+
+TEG modules give a **low and changing voltage**, which is too low to charge a battery directly. To fix this, we **designed a boost converter from scratch** to step the TEG voltage up.
+
+For the **demonstration prototype**, we used a **buck converter** instead to regulate the power and store it in the Li-ion battery. The boost converter design is complete, but it is not the converter running in the demo.
+
+| Converter | Role | Status |
+|---|---|---|
+| **Boost converter** | Raise the low TEG voltage to a usable level | Designed from scratch |
+| **Buck converter** | Regulate power and charge the battery | Used in the demo |
+
+---
+
+## Custom ESP32-S3 Board
+
+We also designed our own ESP32-S3 board in **KiCad 9**. It includes USB-C, an MCP73831 Li-ion battery charger, an AMS1117-3.3 voltage regulator, external flash and PSRAM, and pin headers.
+
+**Schematic**
+![Schematic](assets/hardware/schematic.png)
+
+**3D View**
+![3D view of the board](assets/hardware/board_3d_view.png)
+
+**PCB Layout**
+![PCB layout](assets/hardware/pcb_layout.png)
+
+---
 
 ## Screenshots
 
@@ -169,9 +203,13 @@ Fire_Volt_Green/
 │   └── Code.cpp                   # ESP32 firmware: motor control, sensor reads, TEG monitoring
 ├── assets/                        # Screenshots and images used in this README
 │   └── diagrams/
-│       ├── architecture.svg       # System architecture diagram
-│       ├── dataflow.svg           # Sensor-to-dashboard data flow diagram
-│       └── powerchain.svg         # Heat-to-battery power chain diagram
+│   │   ├── architecture.svg       # System architecture diagram
+│   │   ├── dataflow.svg           # Sensor-to-dashboard data flow diagram
+│   │   └── powerchain.svg         # Heat-to-battery power chain diagram
+│   └── hardware/
+│       ├── schematic.png          # KiCad schematic of the ESP32-S3 board
+│       ├── board_3d_view.png      # 3D view of the board
+│       └── pcb_layout.png         # PCB layout
 ├── dashboard/
 │   └── fire_volt_green_v5.py      # Streamlit dashboard entry point + requirements.txt
 ├── README.md
