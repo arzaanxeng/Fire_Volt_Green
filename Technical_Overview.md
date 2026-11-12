@@ -30,7 +30,7 @@ FireVolt Green's design directly targets these three constraints: the vehicle mo
                                  │ heat
                                  ▼
                      ┌─────────────────────────┐
-                     │  TEG Array (12–16 units) │──► Buck Converter ──► Usable DC Power
+                     │  TEG Array (12–16 units) │──► Boost (designed) / Buck (demo) ──► Battery
                      └───────────┬─────────────┘
                                  │ exhaust + soot
                                  ▼
@@ -71,13 +71,34 @@ The system is deliberately split into three loosely-coupled subsystems (motion, 
 
 ### 3.2 Heat-to-Electricity Subsystem
 
-**Components:** Combustion chamber, 12–16 TEG modules, custom buck converter
+**Components:** Combustion chamber, 12–16 TEG modules, custom boost converter (designed from scratch), buck converter (used in the demo)
 
 - Crop stubble is burned in an enclosed combustion chamber rather than in the open — this is the core design choice that makes the whole system viable, since it turns an uncontrolled pollution source into a controllable heat source.
 - TEG (thermoelectric generator) modules are mounted against the chamber to exploit the **Seebeck effect** — when one side of a TEG is hot (chamber wall) and the other is cool (ambient/heat-sink side), it generates a small DC voltage. Using 12–16 modules in combination scales this up to a usable power level.
-- Raw TEG output is low-voltage and unregulated, so a **custom buck converter** steps it down/regulates it into a stable DC rail suitable for charging the Li-ion pack or powering onboard electronics.
+- Raw TEG output is low-voltage and unregulated, so it needs conditioning before it can be stored.
+- We **designed a boost converter from scratch** to step the low TEG voltage up to a usable level.
+- For the **demonstration prototype**, we used a **buck converter** to regulate the power and store it in the Li-ion battery. The boost converter design is complete, but the buck converter is what ran in the demo.
 
-**Why this matters technically:** TEG output is highly non-linear and depends on the instantaneous temperature differential across the module, so converting raw TEG output into stable, usable power (rather than just measuring it) is the harder half of the problem — this is where the custom buck converter design work happened, as opposed to using an off-the-shelf regulator.
+**Why this matters technically:** TEG output is highly non-linear and depends on the instantaneous temperature differential across the module, so converting raw TEG output into stable, usable power (rather than just measuring it) is the harder half of the problem. Designing the boost converter ourselves, instead of using an off-the-shelf regulator, is where most of the power-electronics work happened.
+
+### 3.4 Custom ESP32-S3 Board
+
+We also designed our own ESP32-S3 board in **KiCad 9**. It includes:
+
+- ESP32-S3 (U1) with external flash (W25Q128JVS) and PSRAM
+- USB-C connector for power and data
+- MCP73831 Li-ion battery charger with a battery connector
+- AMS1117-3.3 regulator for the 3.3 V rail
+- Reset, flash and user buttons, status LEDs, test points, and two 18-pin headers (J3, J5)
+
+**Schematic**
+![Schematic](assets/hardware/schematic.png)
+
+**3D View**
+![3D view of the board](assets/hardware/board_3d_view.png)
+
+**PCB Layout**
+![PCB layout](assets/hardware/pcb_layout.png)
 
 ### 3.3 Filtration & Recovery Subsystem
 
@@ -105,7 +126,7 @@ The dashboard is built with **Streamlit**, chosen for fast iteration on a data-h
 
 | Challenge | Approach Taken |
 |---|---|
-| TEG output is low and highly variable | Custom buck converter to regulate and stabilize output before it reaches the battery/electronics |
+| TEG output is low and highly variable | Designed a boost converter from scratch to raise the voltage; used a buck converter in the demo to regulate it into the battery |
 | High-current motor control from a low-power MCU | Offloaded to L298N H-bridge drivers; ESP32 only sends logic-level control signals |
 | Combustion produces both particulates and gases | Two-stage filtration (HEPA + activated carbon) rather than a single filter type |
 | Soot is normally filtration waste | Redesigned collection path to treat soot as a recoverable byproduct instead of discarding it |
@@ -118,7 +139,8 @@ The dashboard is built with **Streamlit**, chosen for fast iteration on a data-h
 This project spans the full stack of a hardware-software product, which is unusual for a single prototype:
 
 - **Embedded systems / firmware:** ESP32-based control of motor drivers and sensor telemetry
-- **Power electronics:** Custom buck converter design to condition TEG output
+- **Power electronics:** Boost converter designed from scratch to raise TEG voltage; buck converter used for battery charging in the demo
+- **PCB design:** Custom ESP32-S3 board designed in KiCad 9 (schematic, layout, 3D check)
 - **Applied physics:** Practical use of the Seebeck effect for waste-heat energy recovery
 - **Mechanical/systems integration:** Combining combustion, thermoelectric, and filtration subsystems into one coherent vehicle
 - **Data & visualization software:** Python-based real-time dashboard using Streamlit, Plotly, and Pandas
@@ -130,6 +152,7 @@ This project spans the full stack of a hardware-software product, which is unusu
 ## 7. Current Limitations & Future Work
 
 - Stubble feeding into the combustion chamber is currently manual; automating this is the next major mechanical milestone.
+- The custom boost converter is designed but not yet used in the demo; integrating it in place of the buck converter is a next step.
 - TEG-based power generation is supplementary rather than sufficient for full off-grid operation — battery sizing and TEG array scaling are ongoing considerations.
 - The vehicle currently supports remote/manual navigation; autonomous field navigation (e.g., GPS waypoints) is a planned extension.
 - Soot-to-ink conversion is currently a collection step rather than an in-vehicle processing pipeline — ink production happens downstream of the vehicle today.
